@@ -1,0 +1,77 @@
+<?php
+
+namespace DummyNamespace;
+
+use StarfolkSoftware\Setting\Settings;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
+class DummyClass extends Settings
+{
+    /**
+     * Constructor.
+     *
+     * @param mixed $id
+     * @return void
+     */
+    public function __construct(
+        protected $id
+    )
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Configure the settings attributes
+     * 
+     * @param OptionsResolver $resolver
+     * 
+     * @return void
+     */
+    public function configureAttributes(OptionsResolver $resolver)
+    {
+        // $resolver->define('...')
+        //    ->default('')
+        //    ->allowedTypes('string')
+        //    ->info('...');
+    }
+
+    /**
+     * Returns the setable type
+     * 
+     * @return string
+     */
+    public static function setableType()
+    {
+        return '...';
+    }
+
+    /**
+     * Returns the setable id
+     * 
+     * @return int
+     */
+    public function setableId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Return the settings group
+     * 
+     * @return string
+     */
+    public static function group()
+    {
+        return '{{ slug }}';
+    }
+
+    /**
+     * Validation rules.
+     * 
+     * @return array
+     */
+    public function rules(): array
+    {
+        return [];
+    }
+}

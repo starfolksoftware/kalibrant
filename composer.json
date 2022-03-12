@@ -1,12 +1,12 @@
 {
-    "name": "starfolk-software/laravel-setting",
-    "description": "A package to manage Setting of your models.",
+    "name": "starfolksoftware/laravel-setting",
+    "description": "A package to manage setting of your models.",
     "keywords": [
         "Starfolk Software",
         "laravel",
         "laravel-setting"
     ],
-    "homepage": "https://github.com/starfolk-software/laravel-setting",
+    "homepage": "https://github.com/starfolksoftware/laravel-setting",
     "license": "MIT",
     "authors": [
         {

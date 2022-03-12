@@ -11,7 +11,7 @@ use Illuminate\Support\Collection as BaseCollection;
 use JsonSerializable;
 use StarfolkSoftware\Setting\Exceptions\MassAssignmentException;
 
-abstract class ModelAbstract implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
+abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
 {
 
     /**

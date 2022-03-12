@@ -5,7 +5,7 @@ namespace StarfolkSoftware\Setting;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-final class Setting extends Model
+class Setting extends Model
 {
     use HasFactory;
 
@@ -25,8 +25,8 @@ final class Setting extends Model
         'setable_type',
         'setable_id',
         'group',
-        'name',
-        'payload',
+        'key',
+        'value',
     ];
 
     /**
@@ -51,11 +51,10 @@ final class Setting extends Model
         $setable = (new $setableType)::find($setableId);
         
         return $setable->settings()
-            ->where('group', $group)
+            ->forGroup($group)
             ->get(['key', 'value'])
             ->mapWithKeys(function ($object) {
                 return [$object->name => json_decode($object->payload, true)];
-            })
-            ->toArray();
+            })->toArray();
     }
 }

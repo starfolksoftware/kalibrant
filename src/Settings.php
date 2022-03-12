@@ -4,18 +4,38 @@ namespace StarfolkSoftware\Setting;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-abstract class SettingAbstract extends ModelAbstract
+abstract class Settings extends Model
 {
-    protected $hidden = [];
-
-    protected $guarded = [];
-
-    protected $casts = [];
-
-    protected $resolver;
+    /**
+     * The attributes that should be hidden from serialization.
+     * 
+     * @var array
+     */
+    protected array $hidden = [];
 
     /**
-     * Create a new Eloquent model instance.
+     * The attributes that aren't mass assignable.
+     *
+     * @var string[]|bool
+     */
+    protected array $guarded = [];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected array $casts = [];
+
+    /**
+     * The settings values' resolver.
+     *
+     * @var \Symfony\Component\OptionsResolver\OptionsResolver
+     */
+    protected OptionsResolver $resolver;
+
+    /**
+     * Creates a new Eloquent model instance.
      *
      * @return void
      */
@@ -46,7 +66,7 @@ abstract class SettingAbstract extends ModelAbstract
     }
 
     /**
-     * Configure the settings attributes
+     * Configures the settings attributes
      * 
      * @param OptionsResolver $resolver
      * 
@@ -55,29 +75,40 @@ abstract class SettingAbstract extends ModelAbstract
     abstract public function configureAttributes(OptionsResolver $resolver);
 
     /**
-     * Return the settings group
+     * Returns the setable type
      * 
      * @return string
      */
     abstract public static function setableType();
 
     /**
-     * Return the team id
+     * Returns the setable id
      * 
      * @return int
      */
-    abstract public static function setableId();
+    abstract public function setableId();
 
     /**
-     * Return the settings group
+     * Returns the settings group
      * 
      * @return string
      */
     abstract public static function group();
 
     /**
-     * Update settings
+     * Validation rules.
      * 
+     * @return array
+     */
+    public function rules(): array
+    {
+        return [];
+    }
+
+    /**
+     * Updates settings
+     * 
+     * @return void
      */
     public function save()
     {
@@ -92,15 +123,5 @@ abstract class SettingAbstract extends ModelAbstract
                 ['value' => json_encode($attribute)]
             );
         });
-    }
-
-    /**
-     * Get defined attributes
-     * 
-     * @return array
-     */
-    public function getDefinedAttributes()
-    {
-        return $this->resolver->getDefinedOptions();
     }
 }

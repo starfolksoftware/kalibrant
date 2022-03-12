@@ -4,10 +4,16 @@ namespace StarfolkSoftware\Setting;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use StarfolkSoftware\Setting\Commands\CreateSettingCommand;
+use StarfolkSoftware\Setting\Actions\SaveSettings;
+use StarfolkSoftware\Setting\Commands\SettingsMakeCommand;
+use StarfolkSoftware\Setting\Contracts\SavesSettings;
 
 class SettingServiceProvider extends PackageServiceProvider
 {
+    public array $bindings = [
+        SavesSettings::class => SaveSettings::class,
+    ];
+
     public function configurePackage(Package $package): void
     {
         /*
@@ -18,7 +24,8 @@ class SettingServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-setting')
             ->hasConfigFile()
-            ->hasCommand(CreateSettingCommand::class)
-            ->hasMigration('create_settings_table');
+            ->hasCommand(SettingsMakeCommand::class)
+            ->hasMigration('create_settings_table')
+            ->hasRoute('web');
     }
 }
