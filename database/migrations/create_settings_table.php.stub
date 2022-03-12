@@ -8,10 +8,14 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('laravel_settings_table', function (Blueprint $table) {
+        Schema::create(config('setting.default_table_name'), function (Blueprint $table) {
             $table->id();
 
-            // add fields
+            $table->morphs('settable');
+
+            $table->string('group')->index();
+            $table->string('key');
+            $table->json('value');
 
             $table->timestamps();
         });

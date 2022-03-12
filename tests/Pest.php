@@ -1,5 +1,5 @@
 <?php
 
-use StarfolkSoftware\Settings\Tests\TestCase;
+use StarfolkSoftware\Setting\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

@@ -1,12 +1,12 @@
 <?php
 
-namespace StarfolkSoftware\Settings;
+namespace StarfolkSoftware\Setting;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use StarfolkSoftware\Settings\Commands\SettingsCommand;
+use StarfolkSoftware\Setting\Commands\CreateSettingCommand;
 
-class SettingsServiceProvider extends PackageServiceProvider
+class SettingServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,9 @@ class SettingsServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('laravel-settings')
+            ->name('laravel-setting')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-settings_table')
-            ->hasCommand(SettingsCommand::class);
+            ->hasCommand(CreateSettingCommand::class)
+            ->hasMigration('create_settings_table');
     }
 }

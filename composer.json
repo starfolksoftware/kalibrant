@@ -1,12 +1,12 @@
 {
-    "name": "starfolk-software/laravel-settings",
-    "description": "A package to manage settings of your models.",
+    "name": "starfolk-software/laravel-setting",
+    "description": "A package to manage Setting of your models.",
     "keywords": [
         "Starfolk Software",
         "laravel",
-        "laravel-settings"
+        "laravel-setting"
     ],
-    "homepage": "https://github.com/starfolk-software/laravel-settings",
+    "homepage": "https://github.com/starfolk-software/laravel-setting",
     "license": "MIT",
     "authors": [
         {
@@ -34,13 +34,13 @@
     },
     "autoload": {
         "psr-4": {
-            "StarfolkSoftware\\Settings\\": "src",
-            "StarfolkSoftware\\Settings\\Database\\Factories\\": "database/factories"
+            "StarfolkSoftware\\Setting\\": "src",
+            "StarfolkSoftware\\Setting\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "StarfolkSoftware\\Settings\\Tests\\": "tests"
+            "StarfolkSoftware\\Setting\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -58,10 +58,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "StarfolkSoftware\\Settings\\SettingsServiceProvider"
+                "StarfolkSoftware\\Setting\\SettingServiceProvider"
             ],
             "aliases": {
-                "Settings": "StarfolkSoftware\\Settings\\Facades\\Settings"
+                "Setting": "StarfolkSoftware\\Setting\\Facades\\Setting"
             }
         }
     },
