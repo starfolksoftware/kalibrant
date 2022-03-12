@@ -1,0 +1,70 @@
+{
+    "name": "starfolk-software/laravel-settings",
+    "description": "A package to manage settings of your models.",
+    "keywords": [
+        "Starfolk Software",
+        "laravel",
+        "laravel-settings"
+    ],
+    "homepage": "https://github.com/starfolk-software/laravel-settings",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Faruk Nasir",
+            "email": "faruk@starfolksoftware.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "spatie/laravel-package-tools": "^1.9.2",
+        "illuminate/contracts": "^9.0"
+    },
+    "require-dev": {
+        "nunomaduro/collision": "^6.0",
+        "nunomaduro/larastan": "^2.0.1",
+        "orchestra/testbench": "^7.0",
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-laravel": "^1.1",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.5",
+        "spatie/laravel-ray": "^1.26"
+    },
+    "autoload": {
+        "psr-4": {
+            "StarfolkSoftware\\Settings\\": "src",
+            "StarfolkSoftware\\Settings\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "StarfolkSoftware\\Settings\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "StarfolkSoftware\\Settings\\SettingsServiceProvider"
+            ],
+            "aliases": {
+                "Settings": "StarfolkSoftware\\Settings\\Facades\\Settings"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
