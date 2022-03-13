@@ -30,6 +30,13 @@ class Setting extends Model
     ];
 
     /**
+     * Determines if migrations should be run.
+     * 
+     * @var bool
+     */
+    public static $shouldRunMigrations = true;
+
+    /**
      * Get the parent setable model.
      */
     public function setable()
@@ -56,5 +63,15 @@ class Setting extends Model
             ->mapWithKeys(function ($object) {
                 return [$object->name => json_decode($object->payload, true)];
             })->toArray();
+    }
+
+    /**
+     * Ignores migrations.
+     * 
+     * @return void
+     */
+    public static function ignoreMigrations()
+    {
+        static::$shouldRunMigrations = false;
     }
 }

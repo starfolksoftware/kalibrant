@@ -2,7 +2,6 @@
 
 namespace StarfolkSoftware\Setting\Http\Controllers;
 
-use Illuminate\Routing\Controller;
 use StarfolkSoftware\Setting\Actions\SaveSettings;
 
 class SettingsController extends Controller

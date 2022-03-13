@@ -25,7 +25,10 @@ class SettingServiceProvider extends PackageServiceProvider
             ->name('laravel-setting')
             ->hasConfigFile()
             ->hasCommand(SettingsMakeCommand::class)
-            ->hasMigration('create_settings_table')
             ->hasRoute('web');
+
+        if (Setting::$shouldRunMigrations) {
+            $package->hasMigration('create_settings_table');
+        }
     }
 }
