@@ -20,10 +20,9 @@ trait HasSettings
      * Retrieves a group of settings.
      * 
      * @param  string  $group
-     * @param  mixed   $id
      * @return \StarfolkSoftware\Setting\Settings
      */
-    public function settingsForGroup(string $group, $id)
+    public function settingsForGroup(string $group)
     {
         $settingsClass = config('setting.groups.' . $group);
 
@@ -31,7 +30,7 @@ trait HasSettings
             throw new \InvalidArgumentException("The settings group [{$group}] does not exist.");
         }
 
-        return new $settingsClass($id);
+        return new $settingsClass($this->id);
     }
 
     /**
@@ -40,10 +39,10 @@ trait HasSettings
      * 
      * @param  \Illuminate\Database\Eloquent\Builder $query
      * @param  string $setableType
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @return void
      */
     public function scopeForGroup(Builder $query, string $group)
     {
-        return $query->where('group', $group);
+        $query->where('group', $group);
     }
 }

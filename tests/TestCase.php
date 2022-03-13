@@ -5,6 +5,8 @@ namespace StarfolkSoftware\Setting\Tests;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 use StarfolkSoftware\Setting\SettingServiceProvider;
+use StarfolkSoftware\Setting\Tests\Mocks\TestSettings;
+use StarfolkSoftware\Setting\Tests\Mocks\TestUser;
 
 class TestCase extends Orchestra
 {
@@ -15,6 +17,9 @@ class TestCase extends Orchestra
         Factory::guessFactoryNamesUsing(
             fn (string $modelName) => 'StarfolkSoftware\\Setting\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
+
+        $this->loadLaravelMigrations(['--database' => 'sqlite']);
+        $this->createUser();
     }
 
     protected function getPackageProviders($app)
@@ -26,11 +31,27 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
-        config()->set('database.default', 'testing');
+        config()->set('auth.providers.users.model', TestUser::class);
+        config()->set('database.default', 'sqlite');
+        config()->set('database.connections.sqlite', [
+            'driver' => 'sqlite',
+            'database' => ':memory:',
+            'prefix' => '',
+        ]);
+        config()->set('app.key', 'base64:6Cu/ozj4gPtIjmXjr8EdVnGFNsdRqZfHfVjQkmTlg4Y=');
 
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_laravel-setting_table.php.stub';
+        config()->set('setting.groups.test-settings', TestSettings::class);
+
+        $migration = include __DIR__.'/../database/migrations/create_settings_table.php.stub';
         $migration->up();
-        */
+    }
+
+    protected function createUser()
+    {
+        TestUser::forceCreate([
+            'name' => 'Faruk Nasir',
+            'email' => 'faruk@starfolksoftware.com',
+            'password' => 'test'
+        ]);
     }
 }

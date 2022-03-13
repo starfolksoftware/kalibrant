@@ -7,27 +7,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 abstract class Settings extends Model
 {
     /**
-     * The attributes that should be hidden from serialization.
-     * 
-     * @var array
-     */
-    protected array $hidden = [];
-
-    /**
-     * The attributes that aren't mass assignable.
-     *
-     * @var string[]|bool
-     */
-    protected array $guarded = [];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected array $casts = [];
-
-    /**
      * The settings values' resolver.
      *
      * @var \Symfony\Component\OptionsResolver\OptionsResolver

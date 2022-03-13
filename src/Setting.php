@@ -58,7 +58,7 @@ class Setting extends Model
         $setable = (new $setableType)::find($setableId);
         
         return $setable->settings()
-            ->forGroup($group)
+            ->whereGroup($group)
             ->get(['key', 'value'])
             ->mapWithKeys(function ($object) {
                 return [$object->name => json_decode($object->payload, true)];
