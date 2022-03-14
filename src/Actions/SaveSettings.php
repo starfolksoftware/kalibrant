@@ -19,7 +19,7 @@ class SaveSettings implements SavesSettings
     {
         Validator::make($data, $settings->rules())->validate();
 
-        $definedKeys = $settings->resolver->getDefinedOptions();
+        $definedKeys = $settings->getResolver()->getDefinedOptions();
 
         $settings->forceFill(
             collect($data)->only($definedKeys)->toArray()

@@ -85,6 +85,16 @@ abstract class Settings extends Model
     }
 
     /**
+     * Returns resolver.
+     * 
+     * @return \Symfony\Component\OptionsResolver\OptionsResolver
+     */
+    public function getResolver(): OptionsResolver
+    {
+        return $this->resolver;
+    }
+
+    /**
      * Updates settings
      * 
      * @return void
