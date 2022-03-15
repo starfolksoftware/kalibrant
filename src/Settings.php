@@ -2,10 +2,18 @@
 
 namespace StarfolkSoftware\Setting;
 
+use JsonSerializable;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-abstract class Settings extends Model
+abstract class Settings implements JsonSerializable
 {
+    /**
+     * The model's attributes.
+     *
+     * @var array
+     */
+    protected $attributes = [];
+
     /**
      * The settings values' resolver.
      *
@@ -29,8 +37,8 @@ abstract class Settings extends Model
         if (! empty($attributes)) {
             $this->fill(
                 array_merge(
+                    $attributes,
                     $this->attributes,
-                    $attributes
                 )
             );
         }
@@ -40,8 +48,6 @@ abstract class Settings extends Model
         $this->configureAttributes($this->resolver);
 
         $this->attributes = $this->resolver->resolve($this->attributes);
-
-        parent::__construct($this->attributes);
     }
 
     /**
@@ -95,6 +101,141 @@ abstract class Settings extends Model
     }
 
     /**
+     * Fill the model with an array of attributes.
+     *
+     * @param  array  $attributes
+     * @return $this
+     */
+    public function fill(array $attributes)
+    {
+        foreach ($attributes as $key => $value) {
+            $this->setAttribute($key, $value);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set a given attribute on the model.
+     *
+     * @param  string  $key
+     * @param  mixed  $value
+     * @return $this
+     */
+    public function setAttribute($key, $value)
+    {
+        $this->attributes[$key] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get all of the current attributes on the model.
+     *
+     * @return array
+     */
+    public function getAttributes()
+    {
+        return $this->attributes;
+    }
+
+    /**
+     * Dynamically retrieve attributes on the model.
+     *
+     * @param  string  $key
+     * @return mixed
+     */
+    public function __get($key)
+    {
+        return $this->getAttribute($key);
+    }
+
+    /**
+     * Get an attribute from the model.
+     *
+     * @param  string  $key
+     * @return mixed
+     */
+    public function getAttribute($key)
+    {
+        return $this->getAttributeValue($key);
+    }
+
+    /**
+     * Get a plain attribute (not a relationship).
+     *
+     * @param  string  $key
+     * @return mixed
+     */
+    protected function getAttributeValue($key)
+    {
+        $value = $this->getAttributeFromArray($key);
+
+        return $value;
+    }
+
+    /**
+     * Get an attribute from the $attributes array.
+     *
+     * @param  string  $key
+     * @return mixed
+     */
+    protected function getAttributeFromArray($key)
+    {
+        if (array_key_exists($key, $this->attributes)) {
+            return $this->attributes[$key];
+        }
+    }
+
+    /**
+     * Dynamically set attributes on the model.
+     *
+     * @param  string  $key
+     * @param  mixed  $value
+     * @return void
+     */
+    public function __set($key, $value)
+    {
+        $this->setAttribute($key, $value);
+    }
+
+    /**
+     * Determine if an attribute exists on the model.
+     *
+     * @param  string  $key
+     * @return bool
+     */
+    public function __isset($key)
+    {
+        return isset($this->attributes[$key]);
+    }
+
+    /**
+     * Unset an attribute on the model.
+     *
+     * @param  string  $key
+     * @return void
+     */
+    public function __unset($key)
+    {
+        unset($this->attributes[$key]);
+    }
+
+    /**
+     * Handle dynamic static method calls into the method.
+     *
+     * @param  string  $method
+     * @param  array   $parameters
+     * @return mixed
+     */
+    public static function __callStatic($method, $parameters)
+    {
+        $instance = new static;
+
+        return call_user_func_array([$instance, $method], $parameters);
+    }
+
+    /**
      * Updates settings
      * 
      * @return void
@@ -112,5 +253,16 @@ abstract class Settings extends Model
                 ['value' => json_encode($attribute)]
             );
         });
+    }
+
+    /**
+     * Get the JSON serializable representation of the object.
+     *
+     * @return array
+     */
+    #[\ReturnTypeWillChange]
+    public function jsonSerialize()
+    {
+        return $this->attributes;
     }
 }

@@ -21,7 +21,7 @@ class SaveSettings implements SavesSettings
 
         $definedKeys = $settings->getResolver()->getDefinedOptions();
 
-        $settings->forceFill(
+        $settings->fill(
             collect($data)->only($definedKeys)->toArray()
         )->save();
     }
