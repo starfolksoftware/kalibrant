@@ -22,8 +22,8 @@ class SettingServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('laravel-setting')
-            ->hasConfigFile()
+            ->name('laravel_setting')
+            ->hasConfigFile('setting')
             ->hasCommand(SettingsMakeCommand::class)
             ->hasRoute('web');
 
