@@ -7,4 +7,8 @@ return [
     'groups' => [
         // 'setting-group' => SettingGroup::class,
     ],
+
+    'renderer' => 'inertia', // or 'blade', 'json'
+
+    'component' => null, // required if renderer is 'inertia'
 ];

@@ -17,7 +17,7 @@ class SaveSettings implements SavesSettings
      */
     public function __invoke(Settings $settings, array $data): void
     {
-        Validator::make($data, $settings->rules())->validate();
+        Validator::make($data, $settings->rules())->validateWithBag('updateSettings');
 
         $definedKeys = $settings->getResolver()->getDefinedOptions();
 

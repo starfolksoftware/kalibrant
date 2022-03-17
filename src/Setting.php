@@ -61,7 +61,7 @@ class Setting extends Model
             ->whereGroup($group)
             ->get(['key', 'value'])
             ->mapWithKeys(function ($object) {
-                return [$object->name => json_decode($object->payload, true)];
+                return [$object->key => json_decode($object->value, true)];
             })->toArray();
     }
 

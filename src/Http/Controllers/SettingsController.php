@@ -12,7 +12,7 @@ class SettingsController extends Controller
      * @param  \StarfolkSoftware\Setting\Actions\SaveSettings  $saveSettings
      * @param  string  $group
      * @param  mixed  $id
-     * @return \Illuminate\Http\RedirectResponse
+     * @return mixed
      */
     public function update(SaveSettings $saveSettings, string $group, $id)
     {
@@ -26,6 +26,18 @@ class SettingsController extends Controller
 
         $saveSettings($settings, request()->all());
 
-        return redirect()->back();
+        if (request()->expectsJson()) {
+            return response()->json([
+                'message' => 'Settings saved.',
+            ]);
+        }
+
+        if (config('setting.renderer') === 'inertia') {
+            return inertia(config('setting.component'), [
+                'message' => 'Settings saved.',
+            ]);
+        }
+
+        return redirect()->back()->with('message', 'Settings saved.');
     }
 }
