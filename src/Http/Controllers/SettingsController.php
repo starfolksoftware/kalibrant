@@ -2,6 +2,7 @@
 
 namespace StarfolkSoftware\Setting\Http\Controllers;
 
+use Illuminate\Support\Facades\Redirect;
 use StarfolkSoftware\Setting\Actions\SaveSettings;
 
 class SettingsController extends Controller
@@ -13,6 +14,7 @@ class SettingsController extends Controller
      * @param  string  $group
      * @param  mixed  $id
      * @return mixed
+     * @throws \InvalidArgumentException
      */
     public function update(SaveSettings $saveSettings, string $group, $id)
     {
@@ -28,16 +30,14 @@ class SettingsController extends Controller
 
         if (request()->expectsJson()) {
             return response()->json([
-                'message' => 'Settings saved.',
+                'settings' => $settings->toArray(),
             ]);
         }
 
-        if (config('setting.renderer') === 'inertia') {
-            return inertia(config('setting.component'), [
-                'message' => 'Settings saved.',
-            ]);
+        if ($settings->redirectRoute) {
+            return Redirect::route($settings->redirectRoute);
         }
 
-        return redirect()->back()->with('message', 'Settings saved.');
+        return Redirect::back();
     }
 }

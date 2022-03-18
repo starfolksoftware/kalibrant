@@ -3,6 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use StarfolkSoftware\Setting\Http\Controllers\SettingsController;
 
-Route::controller(SettingsController::class)->group(function () {
-    Route::put('settings/{group}/{id}', 'update')->name('settings.update');
+Route::group([
+    'middleware' => config('setting.middleware', ['web']),
+], function () {
+    Route::controller(SettingsController::class)->group(function () {
+        Route::put('settings/{group}/{id}', 'update')->name('settings.update');
+    
+        if (app()->runningInConsole()) {
+            Route::get('settings', function () {
+                // This is for testing purposes only.
+            })->name('settings.show');
+        }
+    });
 });

@@ -22,6 +22,13 @@ abstract class Settings implements JsonSerializable
     protected OptionsResolver $resolver;
 
     /**
+     * The route to redirect to after update.
+     * 
+     * @var mixed
+     */
+    public $redirectRoute;
+
+    /**
      * Creates a new Eloquent model instance.
      *
      * @return void
@@ -253,6 +260,16 @@ abstract class Settings implements JsonSerializable
                 ['value' => json_encode($attribute)]
             );
         });
+    }
+
+    /**
+     * To array.
+     * 
+     * @return array
+     */
+    public function toArray()
+    {
+        return $this->attributes;
     }
 
     /**

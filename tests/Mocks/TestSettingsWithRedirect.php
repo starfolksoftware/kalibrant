@@ -1,18 +1,18 @@
 <?php
 
-namespace DummyNamespace;
+namespace StarfolkSoftware\Setting\Tests\Mocks;
 
 use StarfolkSoftware\Setting\Settings;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class DummyClass extends Settings
+class TestSettingsWithRedirect extends Settings
 {
     /**
      * The route to redirect to after update.
      * 
-     * @var string
+     * @var mixed
      */
-    public string $redirectRoute;
+    public $redirectRoute = 'settings.show';
 
     /**
      * Constructor.
@@ -36,10 +36,16 @@ class DummyClass extends Settings
      */
     public function configureAttributes(OptionsResolver $resolver)
     {
-        // $resolver->define('...')
-        //    ->default('')
-        //    ->allowedTypes('string')
-        //    ->info('...');
+        $resolver->define('attribute1')
+           ->default('value1')
+           ->allowedTypes('string')
+           ->info('Holds the value of attribute1');
+
+
+        $resolver->define('attribute2')
+              ->default('value2')
+              ->allowedTypes('string')
+              ->info('Holds the value of attribute2');
     }
 
     /**
@@ -49,7 +55,7 @@ class DummyClass extends Settings
      */
     public static function setableType()
     {
-        return '...';
+        return TestUser::class;
     }
 
     /**
@@ -69,16 +75,6 @@ class DummyClass extends Settings
      */
     public static function group()
     {
-        return '{{ slug }}';
-    }
-
-    /**
-     * Validation rules.
-     * 
-     * @return array
-     */
-    public function rules(): array
-    {
-        return [];
+        return 'test-settings-with-redirect';
     }
 }

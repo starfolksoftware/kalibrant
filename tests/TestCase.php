@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 use StarfolkSoftware\Setting\SettingServiceProvider;
 use StarfolkSoftware\Setting\Tests\Mocks\TestSettings;
+use StarfolkSoftware\Setting\Tests\Mocks\TestSettingsWithRedirect;
 use StarfolkSoftware\Setting\Tests\Mocks\TestUser;
 
 class TestCase extends Orchestra
@@ -41,6 +42,7 @@ class TestCase extends Orchestra
         config()->set('app.key', 'base64:6Cu/ozj4gPtIjmXjr8EdVnGFNsdRqZfHfVjQkmTlg4Y=');
 
         config()->set('setting.groups.test-settings', TestSettings::class);
+        config()->set('setting.groups.test-settings-with-redirect', TestSettingsWithRedirect::class);
 
         $migration = include __DIR__.'/../database/migrations/create_settings_table.php.stub';
         $migration->up();

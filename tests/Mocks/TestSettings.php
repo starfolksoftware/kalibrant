@@ -8,6 +8,13 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class TestSettings extends Settings
 {
     /**
+     * The route to redirect to after update.
+     * 
+     * @var mixed
+     */
+    public $redirectRoute = null;
+
+    /**
      * Constructor.
      *
      * @param mixed $id
