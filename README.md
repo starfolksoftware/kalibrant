@@ -1,4 +1,4 @@
-<p align="center"><img src="/art/logo.svg" alt="Logo Kalibrant"></p>
+<p align="center"><img width="200" src="https://user-images.githubusercontent.com/4984175/159135103-4eda743a-5928-4eb2-a674-939cb518bff3.png" alt="Logo Kalibrant"></p>
 
 <p align="center">
     <a href="https://github.com/laravel/jetstream/actions">
