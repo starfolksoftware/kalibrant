@@ -1,9 +1,9 @@
 <?php
 
-namespace StarfolkSoftware\Setting\Database\Factories;
+namespace StarfolkSoftware\Kalibrant\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use StarfolkSoftware\Setting\Setting;
+use StarfolkSoftware\Kalibrant\Setting;
 
 class SettingFactory extends Factory
 {

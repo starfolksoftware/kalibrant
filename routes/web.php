@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use StarfolkSoftware\Setting\Http\Controllers\SettingsController;
+use StarfolkSoftware\Kalibrant\Http\Controllers\SettingsController;
 
 Route::group([
     'middleware' => config('setting.middleware', ['web']),

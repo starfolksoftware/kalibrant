@@ -1,13 +1,13 @@
 <?php
 
-namespace StarfolkSoftware\Setting\Tests;
+namespace StarfolkSoftware\Kalibrant\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use StarfolkSoftware\Setting\KalibrantServiceProvider;
-use StarfolkSoftware\Setting\Tests\Mocks\TestSettings;
-use StarfolkSoftware\Setting\Tests\Mocks\TestSettingsWithRedirect;
-use StarfolkSoftware\Setting\Tests\Mocks\TestUser;
+use StarfolkSoftware\Kalibrant\KalibrantServiceProvider;
+use StarfolkSoftware\Kalibrant\Tests\Mocks\TestSettings;
+use StarfolkSoftware\Kalibrant\Tests\Mocks\TestSettingsWithRedirect;
+use StarfolkSoftware\Kalibrant\Tests\Mocks\TestUser;
 
 class TestCase extends Orchestra
 {

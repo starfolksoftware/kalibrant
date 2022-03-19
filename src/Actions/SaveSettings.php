@@ -1,17 +1,17 @@
 <?php
 
-namespace StarfolkSoftware\Setting\Actions;
+namespace StarfolkSoftware\Kalibrant\Actions;
 
 use Illuminate\Support\Facades\Validator;
-use StarfolkSoftware\Setting\Contracts\SavesSettings;
-use StarfolkSoftware\Setting\Settings;
+use StarfolkSoftware\Kalibrant\Contracts\SavesSettings;
+use StarfolkSoftware\Kalibrant\Settings;
 
 class SaveSettings implements SavesSettings
 {
     /**
      * Save the settings.
      * 
-     * @param  \StarfolkSoftware\Setting\Settings  $settings
+     * @param  \StarfolkSoftware\Kalibrant\Settings  $settings
      * @param  array  $data
      * @return void
      */

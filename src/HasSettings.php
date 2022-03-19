@@ -1,6 +1,6 @@
 <?php
 
-namespace StarfolkSoftware\Setting;
+namespace StarfolkSoftware\Kalibrant;
 
 use Illuminate\Contracts\Database\Eloquent\Builder;
 
@@ -20,7 +20,7 @@ trait HasSettings
      * Retrieves a group of settings.
      * 
      * @param  string  $group
-     * @return \StarfolkSoftware\Setting\Settings
+     * @return \StarfolkSoftware\Kalibrant\Settings
      */
     public function settingsForGroup(string $group)
     {

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Contracts\Auth\Authenticatable;
-use StarfolkSoftware\Setting\Tests\TestCase;
+use StarfolkSoftware\Kalibrant\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
 

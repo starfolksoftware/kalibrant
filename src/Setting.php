@@ -1,6 +1,6 @@
 <?php
 
-namespace StarfolkSoftware\Setting;
+namespace StarfolkSoftware\Kalibrant;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

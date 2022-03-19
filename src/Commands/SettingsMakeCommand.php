@@ -1,6 +1,6 @@
 <?php
 
-namespace StarfolkSoftware\Setting\Commands;
+namespace StarfolkSoftware\Kalibrant\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 

@@ -36,13 +36,13 @@
     },
     "autoload": {
         "psr-4": {
-            "StarfolkSoftware\\Setting\\": "src",
-            "StarfolkSoftware\\Setting\\Database\\Factories\\": "database/factories"
+            "StarfolkSoftware\\Kalibrant\\": "src",
+            "StarfolkSoftware\\Kalibrant\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "StarfolkSoftware\\Setting\\Tests\\": "tests"
+            "StarfolkSoftware\\Kalibrant\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -60,10 +60,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "StarfolkSoftware\\Setting\\KalibrantServiceProvider"
+                "StarfolkSoftware\\Kalibrant\\KalibrantServiceProvider"
             ],
             "aliases": {
-                "Setting": "StarfolkSoftware\\Setting\\Facades\\Setting"
+                "kalibrant": "StarfolkSoftware\\Kalibrant\\Facades\\KalibrantFacade"
             }
         }
     },

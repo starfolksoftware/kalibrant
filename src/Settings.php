@@ -1,6 +1,6 @@
 <?php
 
-namespace StarfolkSoftware\Setting;
+namespace StarfolkSoftware\Kalibrant;
 
 use JsonSerializable;
 use Symfony\Component\OptionsResolver\OptionsResolver;

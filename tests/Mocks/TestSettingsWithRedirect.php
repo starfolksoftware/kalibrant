@@ -1,8 +1,8 @@
 <?php
 
-namespace StarfolkSoftware\Setting\Tests\Mocks;
+namespace StarfolkSoftware\Kalibrant\Tests\Mocks;
 
-use StarfolkSoftware\Setting\Settings;
+use StarfolkSoftware\Kalibrant\Settings;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class TestSettingsWithRedirect extends Settings

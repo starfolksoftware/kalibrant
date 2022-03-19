@@ -1,12 +1,12 @@
 <?php
 
-namespace StarfolkSoftware\Setting;
+namespace StarfolkSoftware\Kalibrant;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use StarfolkSoftware\Setting\Actions\SaveSettings;
-use StarfolkSoftware\Setting\Commands\SettingsMakeCommand;
-use StarfolkSoftware\Setting\Contracts\SavesSettings;
+use StarfolkSoftware\Kalibrant\Actions\SaveSettings;
+use StarfolkSoftware\Kalibrant\Commands\SettingsMakeCommand;
+use StarfolkSoftware\Kalibrant\Contracts\SavesSettings;
 
 class KalibrantServiceProvider extends PackageServiceProvider
 {

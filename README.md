@@ -46,7 +46,7 @@ php artisan vendor:publish --tag="kalibrant-views"
 ## Usage
 
 ```php
-$Setting = new StarfolkSoftware\Setting();
+$Setting = new StarfolkSoftware\Kalibrant();
 echo $Setting->echoPhrase('Hello, Starfolk Software!');
 ```
 

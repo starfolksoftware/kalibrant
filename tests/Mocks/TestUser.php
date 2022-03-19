@@ -1,9 +1,9 @@
 <?php
 
-namespace StarfolkSoftware\Setting\Tests\Mocks;
+namespace StarfolkSoftware\Kalibrant\Tests\Mocks;
 
 use Illuminate\Foundation\Auth\User;
-use StarfolkSoftware\Setting\HasSettings;
+use StarfolkSoftware\Kalibrant\HasSettings;
 
 class TestUser extends User
 {

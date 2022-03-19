@@ -1,13 +1,13 @@
 <?php
 
-namespace StarfolkSoftware\Setting\Facades;
+namespace StarfolkSoftware\Kalibrant\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \StarfolkSoftware\Setting\Setting
+ * @see \StarfolkSoftware\Kalibrant\Setting
  */
-class Setting extends Facade
+class KalibrantFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {

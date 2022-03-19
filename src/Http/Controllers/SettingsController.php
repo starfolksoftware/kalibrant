@@ -1,16 +1,16 @@
 <?php
 
-namespace StarfolkSoftware\Setting\Http\Controllers;
+namespace StarfolkSoftware\Kalibrant\Http\Controllers;
 
 use Illuminate\Support\Facades\Redirect;
-use StarfolkSoftware\Setting\Actions\SaveSettings;
+use StarfolkSoftware\Kalibrant\Actions\SaveSettings;
 
 class SettingsController extends Controller
 {
     /**
      * Updates the settings.
      * 
-     * @param  \StarfolkSoftware\Setting\Actions\SaveSettings  $saveSettings
+     * @param  \StarfolkSoftware\Kalibrant\Actions\SaveSettings  $saveSettings
      * @param  string  $group
      * @param  mixed  $id
      * @return mixed

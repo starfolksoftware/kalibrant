@@ -1,15 +1,15 @@
 <?php
 
-namespace StarfolkSoftware\Setting\Contracts;
+namespace StarfolkSoftware\Kalibrant\Contracts;
 
-use StarfolkSoftware\Setting\Settings;
+use StarfolkSoftware\Kalibrant\Settings;
 
 interface SavesSettings
 {
     /**
      * Save the settings.
      * 
-     * @param  \StarfolkSoftware\Setting\Settings  $settings
+     * @param  \StarfolkSoftware\Kalibrant\Settings  $settings
      * @param  array  $data
      * @return void
      */

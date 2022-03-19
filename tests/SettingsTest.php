@@ -1,7 +1,7 @@
 <?php
 
-use StarfolkSoftware\Setting\Tests\Mocks\TestSettings;
-use StarfolkSoftware\Setting\Tests\Mocks\TestUser;
+use StarfolkSoftware\Kalibrant\Tests\Mocks\TestSettings;
+use StarfolkSoftware\Kalibrant\Tests\Mocks\TestUser;
 
 it('can retrieve a model\'s settings', function () {
     $user = TestUser::first();

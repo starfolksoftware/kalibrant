@@ -2,7 +2,7 @@
 
 namespace DummyNamespace;
 
-use StarfolkSoftware\Setting\Settings;
+use StarfolkSoftware\Kalibrant\Settings;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class DummyClass extends Settings
