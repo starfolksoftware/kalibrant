@@ -4,11 +4,11 @@ namespace StarfolkSoftware\Kalibrant;
 
 use Illuminate\Contracts\Database\Eloquent\Builder;
 
-trait HasSettings 
+trait HasSettings
 {
     /**
      * Get all of the model's settings.
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function settings()
@@ -18,7 +18,7 @@ trait HasSettings
 
     /**
      * Retrieves a group of settings.
-     * 
+     *
      * @param  string  $group
      * @return \StarfolkSoftware\Kalibrant\Settings
      */
@@ -36,7 +36,7 @@ trait HasSettings
     /**
      * Scope a query to only include settings for the given setable type
      * of the model.
-     * 
+     *
      * @param  \Illuminate\Database\Eloquent\Builder $query
      * @param  string $setableType
      * @return void

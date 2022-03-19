@@ -1,6 +1,5 @@
 <?php
 
-use StarfolkSoftware\Kalibrant\Tests\Mocks\TestSettings;
 use StarfolkSoftware\Kalibrant\Tests\Mocks\TestUser;
 
 it('can retrieve a model\'s settings', function () {

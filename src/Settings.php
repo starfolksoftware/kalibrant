@@ -23,7 +23,7 @@ abstract class Settings implements JsonSerializable
 
     /**
      * The route to redirect to after update.
-     * 
+     *
      * @var mixed
      */
     public $redirectRoute;
@@ -36,8 +36,8 @@ abstract class Settings implements JsonSerializable
     public function __construct()
     {
         $attributes = Setting::attributesInGroup(
-            static::setableType(), 
-            static::setableId(), 
+            static::setableType(),
+            static::setableId(),
             static::group()
         );
 
@@ -51,7 +51,7 @@ abstract class Settings implements JsonSerializable
         }
 
         $this->resolver = new OptionsResolver();
-        
+
         $this->configureAttributes($this->resolver);
 
         $this->attributes = $this->resolver->resolve($this->attributes);
@@ -59,37 +59,37 @@ abstract class Settings implements JsonSerializable
 
     /**
      * Configures the settings attributes
-     * 
+     *
      * @param OptionsResolver $resolver
-     * 
+     *
      * @return void
      */
     abstract public function configureAttributes(OptionsResolver $resolver);
 
     /**
      * Returns the setable type
-     * 
+     *
      * @return string
      */
     abstract public static function setableType();
 
     /**
      * Returns the setable id
-     * 
+     *
      * @return int
      */
     abstract public function setableId();
 
     /**
      * Returns the settings group
-     * 
+     *
      * @return string
      */
     abstract public static function group();
 
     /**
      * Validation rules.
-     * 
+     *
      * @return array
      */
     public function rules(): array
@@ -99,7 +99,7 @@ abstract class Settings implements JsonSerializable
 
     /**
      * Returns resolver.
-     * 
+     *
      * @return \Symfony\Component\OptionsResolver\OptionsResolver
      */
     public function getResolver(): OptionsResolver
@@ -237,14 +237,14 @@ abstract class Settings implements JsonSerializable
      */
     public static function __callStatic($method, $parameters)
     {
-        $instance = new static;
+        $instance = new static();
 
         return call_user_func_array([$instance, $method], $parameters);
     }
 
     /**
      * Updates settings
-     * 
+     *
      * @return void
      */
     public function save()
@@ -252,8 +252,8 @@ abstract class Settings implements JsonSerializable
         collect($this->attributes)->each(function ($attribute, $key) {
             Setting::updateOrCreate(
                 [
-                    'setable_type' => static::setableType(), 
-                    'setable_id' => static::setableId(), 
+                    'setable_type' => static::setableType(),
+                    'setable_id' => static::setableId(),
                     'group' => static::group(),
                     'key' => $key,
                 ],
@@ -264,7 +264,7 @@ abstract class Settings implements JsonSerializable
 
     /**
      * To array.
-     * 
+     *
      * @return array
      */
     public function toArray()

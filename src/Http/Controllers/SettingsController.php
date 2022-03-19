@@ -9,7 +9,7 @@ class SettingsController extends Controller
 {
     /**
      * Updates the settings.
-     * 
+     *
      * @param  \StarfolkSoftware\Kalibrant\Actions\SaveSettings  $saveSettings
      * @param  string  $group
      * @param  mixed  $id

@@ -10,7 +10,7 @@ class SaveSettings implements SavesSettings
 {
     /**
      * Save the settings.
-     * 
+     *
      * @param  \StarfolkSoftware\Kalibrant\Settings  $settings
      * @param  array  $data
      * @return void
