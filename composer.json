@@ -1,12 +1,12 @@
 {
-    "name": "starfolksoftware/laravel-setting",
+    "name": "starfolksoftware/kalibrant",
     "description": "A package to manage setting of your models.",
     "keywords": [
         "Starfolk Software",
         "laravel",
-        "laravel-setting"
+        "kalibrant"
     ],
-    "homepage": "https://github.com/starfolksoftware/laravel-setting",
+    "homepage": "https://github.com/starfolksoftware/kalibrant",
     "license": "MIT",
     "authors": [
         {

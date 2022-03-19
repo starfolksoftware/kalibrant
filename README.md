@@ -2,10 +2,10 @@
 
 # A package to manage Setting of your models.
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/starfolk-software/laravel-setting.svg?style=flat-square)](https://packagist.org/packages/starfolk-software/laravel-setting)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/starfolk-software/laravel-setting/run-tests?label=tests)](https://github.com/starfolk-software/laravel-setting/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/starfolk-software/laravel-setting/Check%20&%20fix%20styling?label=code%20style)](https://github.com/starfolk-software/laravel-setting/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/starfolk-software/laravel-setting.svg?style=flat-square)](https://packagist.org/packages/starfolk-software/laravel-setting)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/starfolk-software/kalibrant.svg?style=flat-square)](https://packagist.org/packages/starfolk-software/kalibrant)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/starfolk-software/kalibrant/run-tests?label=tests)](https://github.com/starfolk-software/kalibrant/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/starfolk-software/kalibrant/Check%20&%20fix%20styling?label=code%20style)](https://github.com/starfolk-software/kalibrant/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/starfolk-software/kalibrant.svg?style=flat-square)](https://packagist.org/packages/starfolk-software/kalibrant)
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
@@ -14,20 +14,20 @@ This is where your description should go. Limit it to a paragraph or two. Consid
 You can install the package via composer:
 
 ```bash
-composer require starfolk-software/laravel-setting
+composer require starfolk-software/kalibrant
 ```
 
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-setting-migrations"
+php artisan vendor:publish --tag="kalibrant-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-setting-config"
+php artisan vendor:publish --tag="kalibrant-config"
 ```
 
 This is the contents of the published config file:
@@ -40,7 +40,7 @@ return [
 Optionally, you can publish the views using
 
 ```bash
-php artisan vendor:publish --tag="laravel-setting-views"
+php artisan vendor:publish --tag="kalibrant-views"
 ```
 
 ## Usage

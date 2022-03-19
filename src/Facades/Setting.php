@@ -11,6 +11,6 @@ class Setting extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'laravel-setting';
+        return 'kalibrant';
     }
 }
