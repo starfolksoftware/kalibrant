@@ -53,7 +53,7 @@ class TestCase extends Orchestra
         TestUser::forceCreate([
             'name' => 'Faruk Nasir',
             'email' => 'faruk@starfolksoftware.com',
-            'password' => 'test'
+            'password' => 'test',
         ]);
     }
 }

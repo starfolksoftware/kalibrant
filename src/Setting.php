@@ -31,7 +31,7 @@ class Setting extends Model
 
     /**
      * Determines if migrations should be run.
-     * 
+     *
      * @var bool
      */
     public static $shouldRunMigrations = true;
@@ -46,17 +46,17 @@ class Setting extends Model
 
     /**
      * Get attributes in group
-     * 
+     *
      * @param string $setableType
      * @param int $setableId
      * @param string $group
-     * 
+     *
      * @return array
      */
     public static function attributesInGroup(string $setableType, int $setableId, string $group)
     {
-        $setable = (new $setableType)::find($setableId);
-        
+        $setable = (new $setableType())::find($setableId);
+
         return $setable->settings()
             ->whereGroup($group)
             ->get(['key', 'value'])
@@ -67,7 +67,7 @@ class Setting extends Model
 
     /**
      * Ignores migrations.
-     * 
+     *
      * @return void
      */
     public static function ignoreMigrations()

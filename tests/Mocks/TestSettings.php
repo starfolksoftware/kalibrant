@@ -9,7 +9,7 @@ class TestSettings extends Settings
 {
     /**
      * The route to redirect to after update.
-     * 
+     *
      * @var mixed
      */
     public $redirectRoute = null;
@@ -22,16 +22,15 @@ class TestSettings extends Settings
      */
     public function __construct(
         protected $id
-    )
-    {
+    ) {
         parent::__construct();
     }
 
     /**
      * Configure the settings attributes
-     * 
+     *
      * @param OptionsResolver $resolver
-     * 
+     *
      * @return void
      */
     public function configureAttributes(OptionsResolver $resolver)
@@ -50,7 +49,7 @@ class TestSettings extends Settings
 
     /**
      * Returns the setable type
-     * 
+     *
      * @return string
      */
     public static function setableType()
@@ -60,7 +59,7 @@ class TestSettings extends Settings
 
     /**
      * Returns the setable id
-     * 
+     *
      * @return int
      */
     public function setableId()
@@ -70,7 +69,7 @@ class TestSettings extends Settings
 
     /**
      * Return the settings group
-     * 
+     *
      * @return string
      */
     public static function group()
