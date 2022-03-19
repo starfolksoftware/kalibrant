@@ -5,6 +5,15 @@ namespace StarfolkSoftware\Kalibrant;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * StarfolkSoftware\Kalibrant\Setting
+ *
+ * @property string $setable_type
+ * @property mixed $setable_id
+ * @property string $group
+ * @property string $key
+ * @property mixed $value
+ */
 class Setting extends Model
 {
     use HasFactory;

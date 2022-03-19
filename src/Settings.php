@@ -229,20 +229,6 @@ abstract class Settings implements JsonSerializable
     }
 
     /**
-     * Handle dynamic static method calls into the method.
-     *
-     * @param  string  $method
-     * @param  array   $parameters
-     * @return mixed
-     */
-    public static function __callStatic($method, $parameters)
-    {
-        $instance = new static();
-
-        return call_user_func_array([$instance, $method], $parameters);
-    }
-
-    /**
      * Updates settings
      *
      * @return void

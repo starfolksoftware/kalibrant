@@ -10,9 +10,16 @@ class SettingsMakeCommand extends GeneratorCommand
 
     protected $description = 'Create a new setting class';
 
-    public function handle(): void
+    /**
+     * Execute the console command.
+     *
+     * @return bool|null
+     *
+     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
+     */
+    public function handle(): bool|null
     {
-        parent::handle();
+        return parent::handle();
     }
 
     protected function getStub()
