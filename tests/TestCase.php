@@ -41,8 +41,8 @@ class TestCase extends Orchestra
         ]);
         config()->set('app.key', 'base64:6Cu/ozj4gPtIjmXjr8EdVnGFNsdRqZfHfVjQkmTlg4Y=');
 
-        config()->set('setting.groups.test-settings', TestSettings::class);
-        config()->set('setting.groups.test-settings-with-redirect', TestSettingsWithRedirect::class);
+        config()->set('kalibrant.groups.test-settings', TestSettings::class);
+        config()->set('kalibrant.groups.test-settings-with-redirect', TestSettingsWithRedirect::class);
 
         $migration = include __DIR__.'/../database/migrations/create_settings_table.php.stub';
         $migration->up();

@@ -22,8 +22,8 @@ class KalibrantServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('laravel_setting')
-            ->hasConfigFile('setting')
+            ->name('kalibrant')
+            ->hasConfigFile('kalibrant')
             ->hasCommand(SettingsMakeCommand::class)
             ->hasRoute('web');
 

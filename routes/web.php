@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use StarfolkSoftware\Kalibrant\Http\Controllers\SettingsController;
 
 Route::group([
-    'middleware' => config('setting.middleware', ['web']),
+    'middleware' => config('kalibrant.middleware', ['web']),
 ], function () {
     Route::controller(SettingsController::class)->group(function () {
         Route::put('settings/{group}/{id}', 'update')->name('settings.update');

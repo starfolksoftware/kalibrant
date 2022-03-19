@@ -43,7 +43,7 @@ it('can update a setting over http request', function () {
 it('throws an exception when trying to update a setting not in the config file', function () {
     $user = TestUser::first();
 
-    config()->set('setting.groups', []);
+    config()->set('kalibrant.groups', []);
 
     $response = actingAs($user)->put(route('settings.update', [
         'group' => 'test-settings',

@@ -18,7 +18,7 @@ class SettingsController extends Controller
      */
     public function update(SaveSettings $saveSettings, string $group, $id)
     {
-        $settingsClass = config('setting.groups.' . $group);
+        $settingsClass = config('kalibrant.groups.' . $group);
 
         if (! $settingsClass) {
             throw new \InvalidArgumentException("The settings group [{$group}] does not exist.");

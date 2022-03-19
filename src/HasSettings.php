@@ -24,7 +24,7 @@ trait HasSettings
      */
     public function settingsForGroup(string $group)
     {
-        $settingsClass = config('setting.groups.' . $group);
+        $settingsClass = config('kalibrant.groups.' . $group);
 
         if (! $settingsClass) {
             throw new \InvalidArgumentException("The settings group [{$group}] does not exist.");
