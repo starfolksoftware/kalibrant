@@ -4,7 +4,7 @@ namespace StarfolkSoftware\Setting\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use StarfolkSoftware\Setting\SettingServiceProvider;
+use StarfolkSoftware\Setting\KalibrantServiceProvider;
 use StarfolkSoftware\Setting\Tests\Mocks\TestSettings;
 use StarfolkSoftware\Setting\Tests\Mocks\TestSettingsWithRedirect;
 use StarfolkSoftware\Setting\Tests\Mocks\TestUser;
@@ -26,7 +26,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            SettingServiceProvider::class,
+            KalibrantServiceProvider::class,
         ];
     }
 

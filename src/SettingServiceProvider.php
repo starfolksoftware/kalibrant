@@ -8,7 +8,7 @@ use StarfolkSoftware\Setting\Actions\SaveSettings;
 use StarfolkSoftware\Setting\Commands\SettingsMakeCommand;
 use StarfolkSoftware\Setting\Contracts\SavesSettings;
 
-class SettingServiceProvider extends PackageServiceProvider
+class KalibrantServiceProvider extends PackageServiceProvider
 {
     public array $bindings = [
         SavesSettings::class => SaveSettings::class,

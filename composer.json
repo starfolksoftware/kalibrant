@@ -4,6 +4,7 @@
     "keywords": [
         "Starfolk Software",
         "laravel",
+        "Settings",
         "kalibrant"
     ],
     "homepage": "https://github.com/starfolksoftware/kalibrant",
@@ -59,7 +60,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "StarfolkSoftware\\Setting\\SettingServiceProvider"
+                "StarfolkSoftware\\Setting\\KalibrantServiceProvider"
             ],
             "aliases": {
                 "Setting": "StarfolkSoftware\\Setting\\Facades\\Setting"
